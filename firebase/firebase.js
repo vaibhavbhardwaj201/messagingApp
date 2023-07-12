@@ -7,8 +7,8 @@ import {getFirestore} from "firebase/firestore"
 
 
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API,
-  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
   projectId: "messaging-app-firebasse",
   storageBucket: "messaging-app-firebasse.appspot.com",
   messagingSenderId: "177803303108",
@@ -20,4 +20,4 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app)
 export const storage = getStorage(app)
-export const db = getStorage(app)
+export const db = getFirestore(app)

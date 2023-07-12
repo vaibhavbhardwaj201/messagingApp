@@ -54,7 +54,7 @@ const Login = () => {
 
           <form 
             className="flex flex-col items-center gap-3 mt-5 w-3/4"
-            onClick={handleFormSubmit}
+            onSubmit={handleFormSubmit}
           >
             <input type="email" name="email" placeholder='Email' className="w-full h-14 bg-c5 rounded-xl outline-none border-none px-5 text-c3" autoComplete='off' />
             <input type="password" name="password" placeholder='Password' className="w-full h-14 bg-c5 rounded-xl outline-none border-none px-5 text-c3" autoComplete='off' />
