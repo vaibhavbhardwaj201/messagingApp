@@ -2,8 +2,22 @@ import Link from 'next/link'
 import React from 'react'
 
 import {IoLogoGoogle, IoLogoFacebook} from 'react-icons/io'
+import { auth } from '@/firebase/firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth' 
 
 const Login = () => {
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const email = e.target[0].value
+    const password = e.target[1].value
+    try {
+      await signInWithEmailAndPassword(auth, email, password)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <div className='min-h-screen flex justify-center items-center bg-c1'>
         <div className="flex items-center flex-col w-full sm:w-3/4">
@@ -38,7 +52,10 @@ const Login = () => {
             <span className="w-5 h-[1px] bg-c3"></span>
           </div>
 
-          <form className="flex flex-col items-center gap-3 mt-5 w-3/4">
+          <form 
+            className="flex flex-col items-center gap-3 mt-5 w-3/4"
+            onClick={handleFormSubmit}
+          >
             <input type="email" name="email" placeholder='Email' className="w-full h-14 bg-c5 rounded-xl outline-none border-none px-5 text-c3" autoComplete='off' />
             <input type="password" name="password" placeholder='Password' className="w-full h-14 bg-c5 rounded-xl outline-none border-none px-5 text-c3" autoComplete='off' />
             <div className="text-right w-full text-c3">
