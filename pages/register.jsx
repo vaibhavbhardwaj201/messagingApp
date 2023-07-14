@@ -49,7 +49,7 @@ const Register = () => {
 
           <div className="flex justify-center gap-1 text-c3 mt-5">
             <span>Already have an account?</span>
-            <Link href={'/register'} className='font-semibold text-white underline underline-offset-2 cursor-pointer'>Login Now</Link>
+            <Link href={'/login'} className='font-semibold text-white underline underline-offset-2 cursor-pointer'>Login Now</Link>
           </div>
 
         </div>
